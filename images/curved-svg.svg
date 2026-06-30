@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 677" width="1280" height="677">
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1360.737,396.18,-241.467,-829.353,1278.84,-2.465)">
+			<stop offset="0" stop-color="#C8A96E" stop-opacity="0"/>
+			<stop offset=".15" stop-color="#C8A96E" stop-opacity="1"/>
+			<stop offset=".85" stop-color="#C8A96E" stop-opacity="1"/>
+			<stop offset="1" stop-color="#C8A96E" stop-opacity="0"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: url(#g1);stroke-width: 3 } 
+	</style>
+	<path class="s0" d="m1592-991c0 920.11-712.76 1666-1592 1666"/>
+</svg>
