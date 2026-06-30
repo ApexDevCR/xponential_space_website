@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="author" content="" />
+  <title>Xponential Space</title>
+  <!--fav icon-->
+  <link rel="shortcut icon" href="./images/fab.png" type="image/x-icon" />
+  <!-- Default links -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <!--Plugin Css-->
+  <link href="css/slick.css" rel="stylesheet" type="text/css" />
+  <link href="css/slick-theme.css" rel="stylesheet" type="text/css" />
+
+  <!-- custom links -->
+  <link href="css/custom.css" rel="stylesheet" type="text/css" />
+  <link href="css/developer.css" rel="stylesheet" type="text/css" />
+  <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- header -->
+  <header class="hdr_sec">
+    <nav class="navbar">
+      <div class="container">
+        <a class="hdr_logo" href="./index.html">
+          <img src="./images/header-logo.png" alt="Logo" class="logo" />
+        </a>
+
+        <div class="nav_wrapper" id="navWrapper">
+          <ul class="navbar_nav">
+            <li class="nav_item">
+              <a class="nav_link active" href="">Company</a>
+            </li>
+            <li class="nav_item">
+              <a class="nav_link" href="">Industries</a>
+            </li>
+            <li class="nav_item">
+              <a class="nav_link" href="">Capabilities</a>
+            </li>
+            <li class="nav_item has-sub-mnu">
+              <a class="nav_link" href="">Solutions</a>
+              <ul class="sub-mnu">
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="">Sub Menu 1</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="">Sub Menu 2</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="">Sub Menu 3</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item">
+              <a class="nav_link" href="">Our Work</a>
+            </li>
+            <li class="nav_item">
+              <a class="nav_link" href="">Newsroom</a>
+            </li>
+          </ul>
+          <div class="hdr-btn">
+            <a href="" class="primary_btn">Talk to us</a>
+          </div>
+          <!-- <span class="d-lg-none close_header"><img src="./images/crossIcon.png" alt="" /></span> -->
+        </div>
+      </div>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+  </header>
+  <!-- header -->
+
+  <section class="elvgt_bnnr">
+    <div class="container">
+      <div class="elv_bnnr_cnct">
+        <h5>Our proprietary commercialization framework</h5>
+        <h1>eleveight™</h1>
+        <h6>elevating organizations into the space economy</h6>
+        <p>The global space economy is expanding rapidly, but for most organizations the pathway to engaging with it
+          remains unclear. eleveight™ bridges the gap between space capabilities and terrestrial market needs — eight
+          sequential steps across four phases, guiding the journey from awareness to commercial impact.</p>
+        <button class="primary_btn"
+          onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">Explore the
+          framework</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="phases_sec">
+    <div class="container">
+      <div class="sec_ttle">
+        <h6>Four phases</h6>
+        <h2>From <strong>Opportunity Recognition</strong> to <strong>Value Realization</strong></h2>
+      </div>
+      <div class="phases_grid" id="phases-grid">
+        <div class="phase-block ph-k" id="pb-k">
+          <div class="pb-icon">
+            <img src="./images/phase_icn_1.png" alt="phase-icon">
+          </div>
+          <h3>Knowledge</h3>
+          <p>Recognize the value</p>
+          <p class="pb-tag">Phase 1</p>
+          <div class="pb-steps">
+            <div class="pb-step-chip" data-step="1" onclick="goStepAndScroll(0)">Opportunity discovery</div>
+            <div class="pb-step-chip" data-step="2" onclick="goStepAndScroll(1)">Internal alignment</div>
+          </div>
+          <ul class="pb-outputs">
+            <li>Space industry landscape briefings</li>
+            <li>Sector-specific technology overviews</li>
+            <li>Opportunity mapping for your industry</li>
+            <li>Executive workshops &amp; education sessions</li>
+          </ul>
+        </div>
+        <div class="phase-block ph-i" id="pb-i">
+          <div class="pb-icon">
+            <img src="./images/phase_icn_2.png" alt="phase-icon">
+          </div>
+          <h3>INSIGHTS</h3>
+          <p>Understand/Validate the Value</p>
+          <p class="pb-tag">Phase 2</p>
+          <div class="pb-steps">
+            <div class="pb-step-chip" data-step="3" onclick="goStepAndScroll(2)">Scientific & technical feasibility
+            </div>
+            <div class="pb-step-chip" data-step="4" onclick="goStepAndScroll(3)">Scale-up & commercial deployment</div>
+          </div>
+          <ul class="pb-outputs">
+            <li>Use-case identification &amp; prioritization</li>
+            <li>Market intelligence &amp; competitive analysis</li>
+            <li>Technology capability mapping</li>
+            <li>Opportunity scoring framework</li>
+          </ul>
+        </div>
+        <div class="phase-block ph-s" id="pb-s">
+          <div class="pb-icon">
+            <img src="./images/phase_icn_3.png" alt="phase-icon">
+          </div>
+          <h3>STRATEGY</h3>
+          <p>Architect the Value</p>
+          <p class="pb-tag">Phase 3</p>
+          <div class="pb-steps">
+            <div class="pb-step-chip" data-step="5" onclick="goStepAndScroll(4)">Commercialization roadmap</div>
+            <div class="pb-step-chip" data-step="6" onclick="goStepAndScroll(5)">Commercial & strategic case</div>
+          </div>
+          <ul class="pb-outputs">
+            <li>Strategic roadmap for space-enabled initiatives</li>
+            <li>Partnership &amp; ecosystem strategy</li>
+            <li>Business case development</li>
+            <li>Investment &amp; risk analysis</li>
+          </ul>
+        </div>
+        <div class="phase-block ph-e" id="pb-e">
+          <div class="pb-icon">
+            <img src="./images/phase_icn_4.png" alt="phase-icon">
+          </div>
+          <h3>EXECUTION</h3>
+          <p>Capture the Value</p>
+          <p class="pb-tag">Phase 4</p>
+          <div class="pb-steps">
+            <div class="pb-step-chip" data-step="7" onclick="goStepAndScroll(6)">Mission execution</div>
+            <div class="pb-step-chip" data-step="8" onclick="goStepAndScroll(7)">Scale-up & commercial deployment</div>
+          </div>
+          <ul class="pb-outputs">
+            <li>Pilot project design &amp; launch</li>
+            <li>Industry partnerships &amp; deal structuring</li>
+            <li>Commercialization support</li>
+            <li>Implementation roadmap &amp; program management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="framework" id="framework">
+    <div class="container">
+      <div class="row frmwrk_rw">
+        <div class="col-md-8">
+          <div class="sec_ttle">
+            <h6>An 8-step commercialization model</h6>
+            <h2>The <strong>Commercialization Journey</strong></h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p>Click any step below to explore its guiding question, key actions, and deliverable.</p>
+        </div>
+      </div>
+      <div class="step-nav" id="step-nav">
+        <div class="step_nav_buttons_wrap" id="step-nav-buttons"></div>
+        <div class="nav_btn_sldr"></div>
+      </div>
+      <div class="step-detail" id="step-detail"></div>
+    </div>
+  </section>
+
+  <section class="deliverables">
+    <div class="container">
+      <div class="sec_ttle">
+        <h6 class="dh-eyebrow">Tangible outputs</h6>
+        <h2>Eight concrete deliverables</h2>
+        <p>Each step produces a real output &#8212; building the evidence base for your commercialization strategy.</p>
+      </div>
+      <div class="del-grid" id="del-grid"></div>
+    </div>
+  </section>
+
+  <section class="join_sec elv_rplce">
+    <div class="join_sec_container">
+      <div class="col-md-6">
+        <div class="elv_rplce_img" style="background-image: url(./images/elv_rplce_img.png);">
+          <div class="elv_rplce_img_innr">
+            <h2>eleveight™ replaces guesswork with sequence</h2>
+            <div class="elv_rplce_img_btm">
+              <div class="elv_rplce_prg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="elv_rplce_prg_caps">
+                <p>
+                  Knowledge
+                </p>
+                <p>
+                  Insights
+                </p>
+                <p>
+                  Strategy
+                </p>
+                <p>
+                  Execution
+                </p>
+              </div>
+              <div class="elv_rplce_img_itm_wrp">
+                <div class="elv_rplce_itm">
+                  <span data-count="8">0</span>
+                  <p>deliverables</p>
+                </div>
+                <div class="elv_rplce_itm">
+                  <span data-count="4">0</span>
+                  <p>phases</p>
+                </div>
+                <div class="elv_rplce_itm">
+                  <span data-count="8">0</span>
+                  <p>deliverables</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="elv_rplce_cnct">
+          <div class="sec_ttle">
+            <h6>Why eleveight™</h6>
+            <h2>A <b>proven path,</b> not a leap of faith</h2>
+            <p>Most organizations exploring space capabilities stall at the same point: they can see the potential, but
+              lack a structured way to validate it, fund it, and bring it to market. eleveight™ closes that gap.</p>
+          </div>
+          <ul class="elv_rplce_list">
+            <li class="why-item">
+              <div class="icn">
+                <img src="./images/why_itm_1.png" alt="icon">
+              </div>
+              <p><strong>Sequential, not theoretical.</strong> Each step builds directly on the evidence from the last.</p>
+            </li>
+            <li class="why-item">
+              <div class="icn">
+                <img src="./images/why_itm_2.png" alt="icon">
+              </div>
+              <p><strong>Deliverable-driven. </strong> Every phase produces a concrete artifact your team and investors can act on.</p>
+            </li>
+            <li class="why-item">
+              <div class="icn">
+                <img src="./images/why_itm_3.png" alt="icon">
+              </div>
+              <p><strong>Cross-functional by design. </strong> Built for collaboration between science, strategy, and execution teams.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movebynd_sec">
+    <div class="container">
+      <div class="sec_ttle">
+        <h6>The result: real value from space</h6>
+        <h2>Move beyond <b>curiosity</b></h2>
+        <p>By combining knowledge, insights, strategy, and execution, eleveight™ helps organizations develop concrete initiatives that drive innovation, competitiveness, and long-term growth — transforming space capabilities into real economic value on Earth.</p>
+        <a href="#" class="primary_btn dark">Get started with xponential space</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer_sec -->
+  <footer class="footer_sec">
+    <div class="footerlist_wrp">
+      <div class="container">
+        <div class="footerList">
+          <div class="footericon">
+            <a href="#">
+              <img src="./images/footer_logo.png" alt="" />
+            </a>
+            <h2>The Future is xponential.</h2>
+          </div>
+          <div class="ftrlist">
+            <div class="ftrlist_item">
+              <h6>Company</h6>
+              <ul>
+                <li>
+                  <a href="#">Mission</a>
+                </li>
+                <li>
+                  <a href="#">Vision</a>
+                </li>
+                <li>
+                  <a href="#">Clients & Partners</a>
+                </li>
+                <li>
+                  <a href="#">Team</a>
+                </li>
+                <li>
+                  <a href="#">Careers</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ftrlist_item">
+              <h6>Industries</h6>
+              <ul>
+                <li>
+                  <a href="#">Life Sciences & Pharma</a>
+                </li>
+                <li>
+                  <a href="#">Advanced Materials</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ftrlist_item">
+              <h6>Capabilities</h6>
+              <ul>
+                <li>
+                  <a href="#">Knowledge</a>
+                </li>
+                <li>
+                  <a href="#">Insights</a>
+                </li>
+                <li>
+                  <a href="#">Strategy</a>
+                </li>
+                <li>
+                  <a href="#">Execution</a>
+                </li>
+                <li>
+                  <a href="#">eleveight framework</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ftrlist_item">
+              <h6>Solutions</h6>
+              <ul>
+                <li>
+                  <a href="#">For Earth Organizations</a>
+                </li>
+                <li>
+                  <a href="#">For Space Organizations</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ftrlist_item">
+              <h6>Newsroom</h6>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-sec">
+          <p>© 2026 Xponential Space – All Rights Reserved</p>
+          <ul>
+            <li>
+              <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade solution_modal" id="solutionModal" tabindex="-1" aria-labelledby="solutionModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <h5 class="modal-title" id="solutionModalLabel">
+            <img class="mod_img" src="./images/sol_icn1-1.svg" alt="icon" />
+            Executive Alignment Strategic Readiness
+          </h5>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Praesentium temporibus eligendi, maxime dolorum vitae sed magni
+            aliquid ex harum minima fuga cum quisquam nobis consequuntur
+            cupiditate quae totam.
+          </p>
+          <p>
+            placeat nostrum hic animi voluptatum dolores ipsum at! Beatae
+            necessitatibus praesentium aliquid dignissimos blanditiis,
+            reiciendis voluptates nisi quisquam veritatis placeat illum
+            cumque!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="./js/jquery-min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <!-- ScrollSmoother requires ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
+
+  <!-- Load Globe.gl -->
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="./js/custom.js"></script>
+
+  <script>
+    const STEPS = [
+      {
+        num: 1, phase: 'k', name: 'Opportunity <br/> discovery', question: 'What could space solve for you?',
+        actions: ['Map space capabilities to R&D gaps and product challenges', 'Identify high-value scientific and industrial use cases', 'Prioritize applications with strongest impact potential'],
+        why: 'Most organizations never engage with space because they never see it as relevant. This step builds that first concrete bridge.',
+        deliverable: 'Opportunity map',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 2, phase: 'k', name: 'Internal <br/>alignment', question: 'Is the organization aligned around why space matters?',
+        actions: ['Educate teams on space opportunities and constraints', 'Align leadership around opportunity and objectives', 'Build a shared language for space-enabled innovation'],
+        why: 'Without leadership buy-in, even the most promising opportunity stalls before it gets evaluated.',
+        deliverable: 'Executive alignment & readiness',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 3, phase: 'i', name: 'Scientific & technical feasibility', question: 'Does space materially improve your science or product?',
+        actions: ['Evaluate hypothesis strength and scientific validity', 'Assess sensitivity to microgravity or space conditions', 'Define platform fit and data-capture requirements'],
+        why: 'Not every idea benefits from space. This step separates genuine opportunities from interesting but non-viable ones.',
+        deliverable: 'Technical feasibility assessment',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 4, phase: 'i', name: 'Commercial & strategic case', question: 'Is this commercially worth it?',
+        actions: ['Model improvement impact \u2014 yield, purity, performance', 'Cost\u2013benefit and ROI analysis across scenarios', 'IP potential, competitive advantage & time-to-market implications'],
+        why: 'Scientific validity alone doesn\u2019t justify investment. This step quantifies the business case.',
+        deliverable: 'Commercial business case',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 5, phase: 's', name: 'Commercialization roadmap', question: 'What is the pathway to translate space capabilities into commercial value?',
+        actions: ['Translate hypotheses into staged mission architecture', 'Define experiments, hardware, and validation metrics', 'Plan TRL progression and scale-up pathway'],
+        why: 'A validated opportunity still needs a plan. This step turns insight into an executable sequence of milestones.',
+        deliverable: 'Commercialization roadmap',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 6, phase: 's', name: 'Ecosystem <br/> strategy', question: 'Which platforms and partners enable the opportunity?',
+        actions: ['Evaluate stations, free-flyers, and microgravity labs', 'Identify optimal partners across the value chain', 'Assess integration constraints, pricing, and timelines'],
+        why: 'No organization executes a space mission alone. This step identifies who you need, and on what terms.',
+        deliverable: 'Platform & partner strategy',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 7, phase: 'e', name: 'Mission <br/> execution', question: 'How do we successfully run the mission and capture the data?',
+        actions: ['Oversee experiment integration and flight readiness', 'Coordinate launch operations and mission execution', 'Capture, return, and analyze mission data'],
+        why: 'This is where the roadmap becomes reality \u2014 hands-on management of the actual mission.',
+        deliverable: 'Completed mission + data package',
+        image: './images/frmewrkIimg.png'
+      },
+      {
+        num: 8, phase: 'e', name: 'Scale-up & commercial deployment', question: 'How do we translate results into scalable products or capabilities?',
+        actions: ['Design follow-on missions and manufacturing pathways', 'Develop IP, regulatory, and partnership strategies', 'Define market positioning and go-to-market strategy'],
+        why: 'Mission success means nothing without a path to scale. This final step converts results into a market-ready strategy.',
+        deliverable: 'Commercial deployment strategy',
+        image: './images/frmewrkIimg.png'
+      }
+    ];
+
+    const PHASE_META = {
+      k: { label: 'Knowledge', sub: 'Recognize the value' },
+      i: { label: 'Insights', sub: 'Understand & validate' },
+      s: { label: 'Strategy', sub: 'Architect the value' },
+      e: { label: 'Execution', sub: 'Capture the value' }
+    };
+
+    let currentStep = 0;
+
+    function renderStepNav() {
+      document.getElementById('step-nav-buttons').innerHTML =
+        STEPS.map((s, i) => `
+          <button class="step-nav-btn ph-${s.phase}${i === currentStep ? ' active' : ''}"
+                  onclick="goStep(${i})">
+            <span class="sn-label">${s.name}</span>
+          </button>
+        `).join('');
+
+      requestAnimationFrame(updateSlider);
+    }
+
+    function renderStepDetail() {
+      const s = STEPS[currentStep];
+      const pm = PHASE_META[s.phase];
+      const varClass = `ph-${s.phase}-vars`;
+
+      const detail = document.getElementById('step-detail');
+      detail.className = `step-detail ph-${s.phase} ${varClass}`;
+      detail.innerHTML = `
+          <div class="jrny_stp_wrp">
+            <div class="jrny_head">
+              <h6>${pm.label} &#8212; ${pm.sub}</h6>
+              <h2>${(s.name || "").replace(/<br\s*\/?>/gi, "").charAt(0).toUpperCase() + (s.name || "").replace(/<br\s*\/?>/gi, "").slice(1)}</h2>
+              <p>${s.question}</p>
+            </div>
+            <div class="jrny_row">
+              <div class="jrny_rw_cnct">
+                <div class="jrny_rw_cnct_tp">
+                  <h5>Key actions</h5>
+                  <ul>${s.actions.map(a => `<li>${a}</li>`).join('')}</ul>
+                </div>
+                <div class="jrny_rw_cnct_btm">
+                  <h5>Why it matters</h5>
+                  <div class="why_box">${s.why}</div>
+                </div>
+              </div>
+              <div class="jrny_rw_img">
+                <img src="${s.image}" alt="${(s.name || "").replace(/<br\s*\/?>/gi, "").replace(/&lt;br\s*\/?&gt;/gi, "")}" />
+                <span class="dlvr_bdge">
+                  Deliverable
+                </span>
+                <div class="dlvrbl_box">
+                  <h6>Output</h6>
+                  <p>${s.deliverable}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      `;
+
+      updatePhaseBlocks();
+    }
+
+    function renderDeliverables() {
+      document.getElementById('del-grid').innerHTML = STEPS.map(s => {
+        const pm = PHASE_META[s.phase];
+        return `<div class="del-card d-${s.phase}" onclick="goStepAndScroll(${s.num - 1})">
+                  <div class="del-card-cnct">
+                    <span class="dc-num">Step ${s.num}</span>
+                    <h4>${s.deliverable}</h4>
+                    <p>${s.why}</p>
+                  </div>
+                  <span class="dc-badge">${pm.label}</span>
+                </div>`;
+      }).join('');
+    }
+
+    function updatePhaseBlocks() {
+      document.querySelectorAll('.pb-step-chip').forEach(chip => {
+        chip.classList.remove('active');
+      });
+
+      const activeChip = document.querySelector('.pb-step-chip[data-step="' + (currentStep + 1) + '"]');
+
+      if (activeChip) {
+        activeChip.classList.add('active');
+      }
+    }
+
+    function goStep(i) {
+      if (i < 0 || i > 7) return;
+      currentStep = i;
+      renderStepNav();
+      renderStepDetail();
+    }
+
+    function goStepAndScroll(i) {
+      goStep(i);
+      requestAnimationFrame(function () {
+        var el = document.getElementById('framework');
+        if (!el) return;
+        var targetY = el.getBoundingClientRect().top + window.scrollY - 20;
+        if (window._lenis && typeof window._lenis.scrollTo === 'function') {
+          window._lenis.scrollTo(targetY, { duration: 0.8 });
+        } else {
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+      });
+    }
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+    }, { threshold: .08 });
+
+    function addReveal(sel) {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
+        el.style.transition = `opacity .55s ease ${i * 70}ms,transform .55s ease ${i * 70}ms`;
+        io.observe(el);
+      });
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') goStep(currentStep + 1);
+      if (e.key === 'ArrowLeft') goStep(currentStep - 1);
+    });
+
+    renderStepNav();
+    renderStepDetail();
+    renderDeliverables();
+
+    setTimeout(() => {
+      addReveal('.phase-block');
+      addReveal('.del-card');
+      addReveal('.why-item');
+    }, 150);
+  </script>
+
+</body>
+
+</html>
