@@ -1,0 +1,62 @@
+@media (min-width: 1600px) {
+  img#curve-svg {
+    top: 50%;
+    max-width: 1300px;
+    transform: translate(-55%, -50%);
+  }
+
+  .stat-num {
+    font-size: 88px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .stat-year {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  #stat-block {
+    top: 45%;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1384px;
+  }
+
+  .what_we_sec .container{
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 1399px) {
+  .orbit-map-con {
+    padding-right: 15px;
+  }
+
+  .btm_scroll_story h3 {
+    font-size: 28px;
+  }
+
+  .sol_lst_itm h4 {
+    font-size: 14px;
+  }
+
+  .st_des{
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 1575px) {
+}
