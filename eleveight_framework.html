@@ -74,7 +74,7 @@
   </header>
   <!-- header -->
 
-  <section class="elvgt_bnnr">
+  <section class="elvgt_bnnr d-none">
     <div class="container">
       <div class="elv_bnnr_cnct">
         <h5>Our proprietary commercialization framework</h5>
@@ -90,6 +90,75 @@
     </div>
   </section>
 
+  <section class="elvgt_bnnr">
+    <svg class="rocket-trail-svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="trailGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#8A6D3A" stop-opacity="0" />
+          <stop offset="10%" stop-color="#B8884A" stop-opacity=".9" />
+          <stop offset="32%" stop-color="#C8A96E" stop-opacity=".85" />
+          <stop offset="68%" stop-color="#E4CFA0" stop-opacity=".9" />
+          <stop offset="100%" stop-color="#F5F1E8" stop-opacity="1" />
+        </linearGradient>
+      </defs>
+      <!-- Trajectory: near-vertical liftoff curving over toward orbit, like a real launch pitch-over -->
+      <path id="trailCurve" class="rt-path rt-path-glow"
+        d="M 430 880 C 410 650, 460 460, 600 330 C 760 185, 920 120, 1140 95" />
+      <path class="rt-path rt-path-mid" d="M 430 880 C 410 650, 460 460, 600 330 C 760 185, 920 120, 1140 95" />
+      <path class="rt-path rt-path-core" d="M 430 880 C 410 650, 460 460, 600 330 C 760 185, 920 120, 1140 95" />
+      <!-- Ascending rocket tip, animated along the curve -->
+      <circle class="rt-tip" r="3.5" fill="#FFFFFF">
+        <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#trailCurve"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.85;1" dur="8s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+    <div class="orbit-system">
+      <div class="orbit-ring r1">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring r2">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring r3">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit-ring r4">
+        <div class="orbit-dot"></div>
+      </div>
+    </div>
+    <div class="elv_bnnr_cnct">
+        <h5 class="fade-up">Our proprietary commercialization framework</h5>
+        <h1 class="fade-up">eleveight™</h1>
+        <h6 class="fade-up d1">elevating organizations into the space economy</h6>
+        <p fade-up d2>The global space economy is expanding rapidly, but for most organizations the pathway to engaging with it
+          remains unclear. eleveight™ bridges the gap between space capabilities and terrestrial market needs — eight
+          sequential steps across four phases, guiding the journey from awareness to commercial impact.</p>
+        <button class="primary_btn fade-up d3"
+          onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">Explore the
+          framework</button>
+      </div>
+
+    <!-- <div class="hero-eyebrow">Our proprietary commercialization framework</div>
+    <h1 class="hero-title fade-up">eleveight<span class="tm">&#8482;</span></h1>
+    <p class="hero-sub fade-up d1">elevating organizations into the space economy</p>
+    <p class="hero-desc fade-up d2">The global space economy is expanding rapidly, but for most organizations the
+      pathway to engaging with it remains unclear. eleveight&#8482; bridges the gap between space capabilities and
+      terrestrial market needs &#8212; eight sequential steps across four phases, guiding the journey from awareness to
+      commercial impact.</p>
+
+    <div class="hero-cta fade-up d3">
+      <button class="btn-start"
+        onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">Explore the
+        framework</button>
+    </div> -->
+
+    <!-- <div class="scroll-cue" onclick="document.querySelector('.phases-section').scrollIntoView({behavior:'smooth'})">
+      <span>Scroll</span>
+      <div class="scroll-cue-line"></div>
+    </div> -->
+  </section>
 
 
   <section class="phases_sec">
@@ -270,19 +339,22 @@
               <div class="icn">
                 <img src="./images/why_itm_1.png" alt="icon">
               </div>
-              <p><strong>Sequential, not theoretical.</strong> Each step builds directly on the evidence from the last.</p>
+              <p><strong>Sequential, not theoretical.</strong> Each step builds directly on the evidence from the last.
+              </p>
             </li>
             <li class="why-item">
               <div class="icn">
                 <img src="./images/why_itm_2.png" alt="icon">
               </div>
-              <p><strong>Deliverable-driven. </strong> Every phase produces a concrete artifact your team and investors can act on.</p>
+              <p><strong>Deliverable-driven. </strong> Every phase produces a concrete artifact your team and investors
+                can act on.</p>
             </li>
             <li class="why-item">
               <div class="icn">
                 <img src="./images/why_itm_3.png" alt="icon">
               </div>
-              <p><strong>Cross-functional by design. </strong> Built for collaboration between science, strategy, and execution teams.</p>
+              <p><strong>Cross-functional by design. </strong> Built for collaboration between science, strategy, and
+                execution teams.</p>
             </li>
           </ul>
         </div>
@@ -295,7 +367,9 @@
       <div class="sec_ttle">
         <h6>The result: real value from space</h6>
         <h2>Move beyond <b>curiosity</b></h2>
-        <p>By combining knowledge, insights, strategy, and execution, eleveight™ helps organizations develop concrete initiatives that drive innovation, competitiveness, and long-term growth — transforming space capabilities into real economic value on Earth.</p>
+        <p>By combining knowledge, insights, strategy, and execution, eleveight™ helps organizations develop concrete
+          initiatives that drive innovation, competitiveness, and long-term growth — transforming space capabilities
+          into real economic value on Earth.</p>
         <a href="#" class="primary_btn dark">Get started with xponential space</a>
       </div>
     </div>
