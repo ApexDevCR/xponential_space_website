@@ -83,9 +83,9 @@
         <p>The global space economy is expanding rapidly, but for most organizations the pathway to engaging with it
           remains unclear. eleveight™ bridges the gap between space capabilities and terrestrial market needs — eight
           sequential steps across four phases, guiding the journey from awareness to commercial impact.</p>
-        <button class="primary_btn"
-          onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">Explore the
-          framework</button>
+        <button class="primary_btn" onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">
+          Explore the framework
+        </button>
       </div>
     </div>
   </section>
@@ -129,15 +129,15 @@
       </div>
     </div>
     <div class="elv_bnnr_cnct">
-        <h5 class="fade-up">Our proprietary commercialization framework</h5>
+        <h5>Our proprietary commercialization framework</h5>
         <h1 class="fade-up">eleveight™</h1>
         <h6 class="fade-up d1">elevating organizations into the space economy</h6>
-        <p fade-up d2>The global space economy is expanding rapidly, but for most organizations the pathway to engaging with it
+        <p class="fade-up d2">The global space economy is expanding rapidly, but for most organizations the pathway to engaging with it
           remains unclear. eleveight™ bridges the gap between space capabilities and terrestrial market needs — eight
           sequential steps across four phases, guiding the journey from awareness to commercial impact.</p>
-        <button class="primary_btn fade-up d3"
-          onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">Explore the
-          framework</button>
+        <button class="primary_btn fade-up d3" onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'})">
+          Explore the framework
+        </button>
       </div>
 
     <!-- <div class="hero-eyebrow">Our proprietary commercialization framework</div>
@@ -512,214 +512,16 @@
   <script src="./js/jquery-min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script src="./js/gsap.min.js"></script>
+  <script src="./js/ScrollTrigger.min.js"></script>
   <!-- ScrollSmoother requires ScrollTrigger -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+  <script src="./js/ScrollSmoother.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
+  <script src="./js/lenis.min.js"></script>
 
   <!-- Load Globe.gl -->
-  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="./js/globe.gl.min.js"></script>
   <script src="./js/custom.js"></script>
-
-  <script>
-    const STEPS = [
-      {
-        num: 1, phase: 'k', name: 'Opportunity <br/> discovery', question: 'What could space solve for you?',
-        actions: ['Map space capabilities to R&D gaps and product challenges', 'Identify high-value scientific and industrial use cases', 'Prioritize applications with strongest impact potential'],
-        why: 'Most organizations never engage with space because they never see it as relevant. This step builds that first concrete bridge.',
-        deliverable: 'Opportunity map',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 2, phase: 'k', name: 'Internal <br/>alignment', question: 'Is the organization aligned around why space matters?',
-        actions: ['Educate teams on space opportunities and constraints', 'Align leadership around opportunity and objectives', 'Build a shared language for space-enabled innovation'],
-        why: 'Without leadership buy-in, even the most promising opportunity stalls before it gets evaluated.',
-        deliverable: 'Executive alignment & readiness',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 3, phase: 'i', name: 'Scientific & technical feasibility', question: 'Does space materially improve your science or product?',
-        actions: ['Evaluate hypothesis strength and scientific validity', 'Assess sensitivity to microgravity or space conditions', 'Define platform fit and data-capture requirements'],
-        why: 'Not every idea benefits from space. This step separates genuine opportunities from interesting but non-viable ones.',
-        deliverable: 'Technical feasibility assessment',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 4, phase: 'i', name: 'Commercial & strategic case', question: 'Is this commercially worth it?',
-        actions: ['Model improvement impact \u2014 yield, purity, performance', 'Cost\u2013benefit and ROI analysis across scenarios', 'IP potential, competitive advantage & time-to-market implications'],
-        why: 'Scientific validity alone doesn\u2019t justify investment. This step quantifies the business case.',
-        deliverable: 'Commercial business case',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 5, phase: 's', name: 'Commercialization roadmap', question: 'What is the pathway to translate space capabilities into commercial value?',
-        actions: ['Translate hypotheses into staged mission architecture', 'Define experiments, hardware, and validation metrics', 'Plan TRL progression and scale-up pathway'],
-        why: 'A validated opportunity still needs a plan. This step turns insight into an executable sequence of milestones.',
-        deliverable: 'Commercialization roadmap',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 6, phase: 's', name: 'Ecosystem <br/> strategy', question: 'Which platforms and partners enable the opportunity?',
-        actions: ['Evaluate stations, free-flyers, and microgravity labs', 'Identify optimal partners across the value chain', 'Assess integration constraints, pricing, and timelines'],
-        why: 'No organization executes a space mission alone. This step identifies who you need, and on what terms.',
-        deliverable: 'Platform & partner strategy',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 7, phase: 'e', name: 'Mission <br/> execution', question: 'How do we successfully run the mission and capture the data?',
-        actions: ['Oversee experiment integration and flight readiness', 'Coordinate launch operations and mission execution', 'Capture, return, and analyze mission data'],
-        why: 'This is where the roadmap becomes reality \u2014 hands-on management of the actual mission.',
-        deliverable: 'Completed mission + data package',
-        image: './images/frmewrkIimg.png'
-      },
-      {
-        num: 8, phase: 'e', name: 'Scale-up & commercial deployment', question: 'How do we translate results into scalable products or capabilities?',
-        actions: ['Design follow-on missions and manufacturing pathways', 'Develop IP, regulatory, and partnership strategies', 'Define market positioning and go-to-market strategy'],
-        why: 'Mission success means nothing without a path to scale. This final step converts results into a market-ready strategy.',
-        deliverable: 'Commercial deployment strategy',
-        image: './images/frmewrkIimg.png'
-      }
-    ];
-
-    const PHASE_META = {
-      k: { label: 'Knowledge', sub: 'Recognize the value' },
-      i: { label: 'Insights', sub: 'Understand & validate' },
-      s: { label: 'Strategy', sub: 'Architect the value' },
-      e: { label: 'Execution', sub: 'Capture the value' }
-    };
-
-    let currentStep = 0;
-
-    function renderStepNav() {
-      document.getElementById('step-nav-buttons').innerHTML =
-        STEPS.map((s, i) => `
-          <button class="step-nav-btn ph-${s.phase}${i === currentStep ? ' active' : ''}"
-                  onclick="goStep(${i})">
-            <span class="sn-label">${s.name}</span>
-          </button>
-        `).join('');
-
-      requestAnimationFrame(updateSlider);
-    }
-
-    function renderStepDetail() {
-      const s = STEPS[currentStep];
-      const pm = PHASE_META[s.phase];
-      const varClass = `ph-${s.phase}-vars`;
-
-      const detail = document.getElementById('step-detail');
-      detail.className = `step-detail ph-${s.phase} ${varClass}`;
-      detail.innerHTML = `
-          <div class="jrny_stp_wrp">
-            <div class="jrny_head">
-              <h6>${pm.label} &#8212; ${pm.sub}</h6>
-              <h2>${(s.name || "").replace(/<br\s*\/?>/gi, "").charAt(0).toUpperCase() + (s.name || "").replace(/<br\s*\/?>/gi, "").slice(1)}</h2>
-              <p>${s.question}</p>
-            </div>
-            <div class="jrny_row">
-              <div class="jrny_rw_cnct">
-                <div class="jrny_rw_cnct_tp">
-                  <h5>Key actions</h5>
-                  <ul>${s.actions.map(a => `<li>${a}</li>`).join('')}</ul>
-                </div>
-                <div class="jrny_rw_cnct_btm">
-                  <h5>Why it matters</h5>
-                  <div class="why_box">${s.why}</div>
-                </div>
-              </div>
-              <div class="jrny_rw_img">
-                <img src="${s.image}" alt="${(s.name || "").replace(/<br\s*\/?>/gi, "").replace(/&lt;br\s*\/?&gt;/gi, "")}" />
-                <span class="dlvr_bdge">
-                  Deliverable
-                </span>
-                <div class="dlvrbl_box">
-                  <h6>Output</h6>
-                  <p>${s.deliverable}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      `;
-
-      updatePhaseBlocks();
-    }
-
-    function renderDeliverables() {
-      document.getElementById('del-grid').innerHTML = STEPS.map(s => {
-        const pm = PHASE_META[s.phase];
-        return `<div class="del-card d-${s.phase}" onclick="goStepAndScroll(${s.num - 1})">
-                  <div class="del-card-cnct">
-                    <span class="dc-num">Step ${s.num}</span>
-                    <h4>${s.deliverable}</h4>
-                    <p>${s.why}</p>
-                  </div>
-                  <span class="dc-badge">${pm.label}</span>
-                </div>`;
-      }).join('');
-    }
-
-    function updatePhaseBlocks() {
-      document.querySelectorAll('.pb-step-chip').forEach(chip => {
-        chip.classList.remove('active');
-      });
-
-      const activeChip = document.querySelector('.pb-step-chip[data-step="' + (currentStep + 1) + '"]');
-
-      if (activeChip) {
-        activeChip.classList.add('active');
-      }
-    }
-
-    function goStep(i) {
-      if (i < 0 || i > 7) return;
-      currentStep = i;
-      renderStepNav();
-      renderStepDetail();
-    }
-
-    function goStepAndScroll(i) {
-      goStep(i);
-      requestAnimationFrame(function () {
-        var el = document.getElementById('framework');
-        if (!el) return;
-        var targetY = el.getBoundingClientRect().top + window.scrollY - 20;
-        if (window._lenis && typeof window._lenis.scrollTo === 'function') {
-          window._lenis.scrollTo(targetY, { duration: 0.8 });
-        } else {
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
-        }
-      });
-    }
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
-    }, { threshold: .08 });
-
-    function addReveal(sel) {
-      document.querySelectorAll(sel).forEach((el, i) => {
-        el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
-        el.style.transition = `opacity .55s ease ${i * 70}ms,transform .55s ease ${i * 70}ms`;
-        io.observe(el);
-      });
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') goStep(currentStep + 1);
-      if (e.key === 'ArrowLeft') goStep(currentStep - 1);
-    });
-
-    renderStepNav();
-    renderStepDetail();
-    renderDeliverables();
-
-    setTimeout(() => {
-      addReveal('.phase-block');
-      addReveal('.del-card');
-      addReveal('.why-item');
-    }, 150);
-  </script>
 
 </body>
 
