@@ -1284,7 +1284,7 @@ document.querySelectorAll('.elv_rplce_itm span').forEach(el => {
   window.goStepAndScroll = goStepAndScroll;
 })();
 
-/* ═══════════════════════════ Block # ════════════════════════ */
+/* ═══════════════════════════ Block hash(#) tag════════════════════════ */
 document.addEventListener('click', function (e) {
   const link = e.target.closest('a[href="#"]');
   if (link) {
