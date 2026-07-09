@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lenis.on("scroll", ScrollTrigger.update);
 
+  document.querySelectorAll(".accor_body").forEach((el) => {
+    el.setAttribute("data-lenis-prevent", "");
+  });
+
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });

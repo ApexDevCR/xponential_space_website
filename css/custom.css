@@ -3288,6 +3288,11 @@ img#curve-svg {
   text-align: left;
 }
 
+.team_sldr_cnct .accor_body{
+  max-height: 210px;
+  overflow: auto;
+}
+
 .accor_body p {
   padding-top: 5px;
 }
