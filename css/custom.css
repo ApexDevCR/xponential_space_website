@@ -2892,9 +2892,16 @@ img#curve-svg {
   max-width: 780px;
   padding: 0 15px;
 }
+.solution_modal .modal-header {
+  border-bottom: none;
+  padding: 24px 24px 0;
+  align-items: flex-start;
+}
+
 .solution_modal .modal-body {
     padding: 0 24px 24px;
     max-width: 480px;
+    margin-top: -36px;
 }
 
 .solution_modal .modal-content {
@@ -2957,13 +2964,6 @@ img#curve-svg {
 .solution_modal .modal-body p+p{
   margin-top: 12px;
 }
-
-.solution_modal .modal-header {
-  border-bottom: none;
-  padding: 20px 24px 0;
-  align-items: flex-start;
-}
-
 
 /* back to top */
 #backToTop {
