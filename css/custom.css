@@ -2902,21 +2902,23 @@ img#curve-svg {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     color: var(--white);
-    background-image: url(https://updates.futuristicbug.com/xponential_space_website/xponential_wp/wp-content/uploads/2026/07/erthorbtimg.png);
+    background-image: url(../images/erthorbtimg.png);
     background-size: 420px;
     background-repeat: no-repeat;
     background-position: bottom right;
 }
 
 .solution_modal .modal-header .btn_close {
-  opacity: 1;
-  color: var(--white);
-  padding: 12px;
-  border-radius: 8px;
-  line-height: 1;
-  background-color: rgba(255, 255, 255, 0.4);
-  margin: 0;
-  margin-left: auto;
+    opacity: 1;
+    color: var(--white);
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    line-height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+    margin-left: auto;
 }
 
 .solution_modal .mod_img {
