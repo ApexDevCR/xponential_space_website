@@ -2894,7 +2894,7 @@ img#curve-svg {
 }
 .solution_modal .modal-body {
     padding: 30px 24px 24px;
-    max-width: 550px;
+    max-width: 480px;
 }
 
 .solution_modal .modal-content {
@@ -2934,12 +2934,22 @@ img#curve-svg {
     font-weight: 500;
     color: var(--white);
     line-height: 1.4;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
     display: flex;
     gap: 10px 25px;
     align-items: center;
+    position: relative;
 }
-
+.solution_modal .modal-title:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(100deg, rgba(204, 171, 100, 1) 25%, rgba(204, 171, 100, 0) 100%);
+}
 .solution_modal .modal-body p {
   color: #aaa;
   font-weight: 400;
