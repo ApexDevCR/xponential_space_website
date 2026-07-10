@@ -2889,25 +2889,32 @@ img#curve-svg {
   backdrop-filter: blur(6px);
 }
 .solution_modal .modal-dialog{
-  max-width: 630px;
+  max-width: 730px;
   padding: 0 15px;
 }
-.solution_modal .modal-body{
-  padding: 24px;
-}
-.solution_modal .modal-content {
-  background: #13131c;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 4px;
-  color: var(--white);
+.solution_modal .modal-body {
+    padding: 30px 24px 24px;
+    max-width: 530px;
 }
 
-.solution_modal .modal-header .btn-close {
-  filter: invert(1) grayscale(1) brightness(1.5);
-  opacity: 0.5;
-  margin-top: 2px;
-  padding: 0;
-  line-height: 0;
+.solution_modal .modal-content {
+    background-color: #00091e;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: var(--white);
+    background-image: url(https://updates.futuristicbug.com/xponential_space_website/xponential_wp/wp-content/uploads/2026/07/erthorbtimg.png);
+    background-size: 420px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.solution_modal .modal-header .btn_close {
+  opacity: 1;
+  color: var(--white);
+  padding: 12px;
+  border-radius: 8px;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.4);
   margin: 0;
   margin-left: auto;
 }
@@ -2920,27 +2927,28 @@ img#curve-svg {
 }
 
 .solution_modal .modal-title {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 15px;
-  display: flex;
-  gap: 10px 25px;
-  align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 10px 25px;
+    align-items: center;
 }
 
 .solution_modal .modal-body p {
   color: #aaa;
   font-weight: 400;
+  font-size: 16px;
 }
 .solution_modal .modal-body p+p{
   margin-top: 12px;
 }
 
 .solution_modal .modal-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 20px 24px;
+  border-bottom: none;
+  padding: 20px 24px 0;
   align-items: flex-start;
 }
 
