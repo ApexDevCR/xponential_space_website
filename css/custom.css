@@ -2886,7 +2886,7 @@ img#curve-svg {
 }
 
 .solution_modal{
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
 .solution_modal .modal-dialog{
   max-width: 780px;
