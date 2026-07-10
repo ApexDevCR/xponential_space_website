@@ -2902,7 +2902,8 @@ img#curve-svg {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     color: var(--white);
-    background-image: url(../images/erthorbtimg.png);
+    /* background-image: url(../images/erthorbtimg.png); */
+    background-image: url(https://updates.futuristicbug.com/xponential_space_website/xponential_wp/wp-content/uploads/2026/07/erthorbtimg.png);
     background-size: 440px;
     background-repeat: no-repeat;
     background-position: bottom right;
