@@ -2956,11 +2956,9 @@ img#curve-svg {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.3s,
-    visibility 0.3s,
-    transform 0.3s;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
   z-index: 999;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%);
 }
 
 #backToTop.visible {
