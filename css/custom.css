@@ -2885,12 +2885,16 @@ img#curve-svg {
   width: 0px;
 }
 
-.solution_modal .modal-header {
-  border-bottom: 1px solid var(--border);
-  padding: 24px 28px 20px;
-  align-items: flex-start;
+.solution_modal{
+  backdrop-filter: blur(6px);
 }
-
+.solution_modal .modal-dialog{
+  max-width: 630px;
+  padding: 0 15px;
+}
+.solution_modal .modal-body{
+  padding: 24px;
+}
 .solution_modal .modal-content {
   background: #13131c;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -2912,6 +2916,7 @@ img#curve-svg {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  display: none;
 }
 
 .solution_modal .modal-title {
@@ -2927,17 +2932,18 @@ img#curve-svg {
 
 .solution_modal .modal-body p {
   color: #aaa;
-  font-size: 15px;
-  line-height: 1.75;
-  margin: 0 0 15px;
   font-weight: 400;
+}
+.solution_modal .modal-body p+p{
+  margin-top: 12px;
 }
 
 .solution_modal .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 10px;
+  padding: 20px 24px;
   align-items: flex-start;
 }
+
 
 /* back to top */
 #backToTop {
