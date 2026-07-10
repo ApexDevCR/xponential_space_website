@@ -2893,7 +2893,7 @@ img#curve-svg {
   padding: 0 15px;
 }
 .solution_modal .modal-body {
-    padding: 30px 24px 24px;
+    padding: 0 24px 24px;
     max-width: 480px;
 }
 
@@ -2902,9 +2902,8 @@ img#curve-svg {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     color: var(--white);
-    /* background-image: url(../images/erthorbtimg.png); */
-    background-image: url(https://updates.futuristicbug.com/xponential_space_website/xponential_wp/wp-content/uploads/2026/07/erthorbtimg.png);
-    background-size: 440px;
+    background-image: url(../images/erthorbtimg.png);
+    background-size: 540px;
     background-repeat: no-repeat;
     background-position: bottom right;
 }
