@@ -3249,6 +3249,7 @@ img#curve-svg {
   height: 100%;
   object-fit: cover;
   opacity: 0;
+  transition: filter 200ms ease;;
   /* object-position: top; */
   /* filter: grayscale(100%); */
 }
