@@ -3269,6 +3269,7 @@ img#curve-svg {
   opacity: 0;
 }
 
+.team_sldr_cnct:hover,
 .team_sldr_cnct:has(.accor_btn.collapsed) .team_sldr_img>img {
   filter: grayscale(100%);
 }
@@ -3285,6 +3286,7 @@ img#curve-svg {
   border-radius: 8px;
   background-color: var(--white);
   transition: var(--transition);
+  z-index: 1;
 }
 
 .team_sldr_img .lnkdn_icn img {
@@ -3313,6 +3315,15 @@ img#curve-svg {
   padding: 0;
   background-color: transparent;
   text-align: left;
+}
+
+.accor_btn:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .team_sldr_cnct .accor_body{
