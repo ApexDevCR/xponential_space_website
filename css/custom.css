@@ -2896,6 +2896,8 @@ img#curve-svg {
   border-bottom: none;
   padding: 24px 24px 0;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .solution_modal .modal-body {
