@@ -3275,7 +3275,7 @@ img#curve-svg {
 
 
 .team_sldr_cnct:hover .team_sldr_img>img{
-  filter: none;
+  filter: none !important; 
 }
 
 .team_sldr_img .lnkdn_icn {
