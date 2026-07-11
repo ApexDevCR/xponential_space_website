@@ -3269,9 +3269,13 @@ img#curve-svg {
   opacity: 0;
 }
 
-.team_sldr_cnct:hover,
 .team_sldr_cnct:has(.accor_btn.collapsed) .team_sldr_img>img {
   filter: grayscale(100%);
+}
+
+
+.team_sldr_cnct:hover .team_sldr_img>img{
+  filter: none;
 }
 
 .team_sldr_img .lnkdn_icn {
