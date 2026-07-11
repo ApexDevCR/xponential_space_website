@@ -3334,6 +3334,8 @@ img#curve-svg {
 .team_sldr_cnct .accor_body{
   max-height: 210px;
   overflow: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .accor_body p {
