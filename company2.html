@@ -1122,53 +1122,107 @@
     <script>
         /* ═══════════════ TEAM BIO ACCORDION — OPEN ON HOVER ═══════════════ */
         (function initTeamAccordionHover() {
-            const cards = document.querySelectorAll(".team_sldr_cnct");
-            if (!cards.length || typeof bootstrap === "undefined") return;
+    if (typeof bootstrap === "undefined") return;
 
-            const canHover = window.matchMedia(
-                "(hover: hover) and (pointer: fine)"
-            ).matches;
+    const canHover = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
 
-            cards.forEach((card) => {
-                const btn = card.querySelector(".accor_btn");
-                const targetSel = btn && btn.getAttribute("data-bs-target");
-                const panel = targetSel ? card.querySelector(targetSel) : null;
-                if (!btn || !panel) return;
+    // Mobile -> Bootstrap default click
+    if (!canHover) return;
 
-                const bioCollapse = bootstrap.Collapse.getOrCreateInstance(panel, {
-                    toggle: false,
-                });
+    const slider = document.querySelector(".team_sldr");
+    if (!slider) return;
 
-                if (!canHover) return;
+    let closeTimer = null;
 
-                let isHovered = false;
-                let isFocused = false;
+    const closeAll = () => {
+        document.querySelectorAll(".team_sldr .accordion-collapse.show").forEach((panel) => {
+            bootstrap.Collapse.getOrCreateInstance(panel, {
+                toggle: false
+            }).hide();
 
-                const sync = () => {
-                    if (isHovered || isFocused) {
-                        bioCollapse.show();
-                    } else {
-                        bioCollapse.hide();
-                    }
-                };
+            const btn = document.querySelector(
+                '.accor_btn[data-bs-target="#' + panel.id + '"]'
+            );
 
-                card.addEventListener("mouseenter", () => { isHovered = true; sync(); });
-                card.addEventListener("mouseleave", () => { isHovered = false; sync(); });
+            if (btn) {
+                btn.setAttribute("aria-expanded", "false");
+                btn.classList.add("collapsed");
+            }
+        });
+    };
 
-                card.addEventListener("focusin", () => { isFocused = true; sync(); });
-                card.addEventListener("focusout", (e) => {
-                    if (!card.contains(e.relatedTarget)) {
-                        isFocused = false;
-                        sync();
-                    }
-                });
+    slider.querySelectorAll(".team_sldr_cnct").forEach((card) => {
 
-                btn.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                });
-            });
-        })();
+        // Ignore Slick clones
+        if (card.closest(".slick-cloned")) return;
+
+        const btn = card.querySelector(".accor_btn");
+        if (!btn) return;
+
+        const target = btn.dataset.bsTarget;
+        if (!target) return;
+
+        const panel = document.querySelector(target);
+        if (!panel) return;
+
+        btn.removeAttribute("data-bs-toggle");
+
+        const collapse = bootstrap.Collapse.getOrCreateInstance(panel, {
+            toggle: false
+        });
+
+        panel.addEventListener("shown.bs.collapse", () => {
+            btn.setAttribute("aria-expanded", "true");
+            btn.classList.remove("collapsed");
+        });
+
+        panel.addEventListener("hidden.bs.collapse", () => {
+            btn.setAttribute("aria-expanded", "false");
+            btn.classList.add("collapsed");
+        });
+
+        function openCard() {
+            clearTimeout(closeTimer);
+
+            closeAll();
+
+            collapse.show();
+        }
+
+        function closeCard() {
+            clearTimeout(closeTimer);
+
+            closeTimer = setTimeout(() => {
+                collapse.hide();
+            }, 80);
+        }
+
+        card.addEventListener("pointerenter", openCard);
+        card.addEventListener("pointerleave", closeCard);
+
+        card.addEventListener("focusin", openCard);
+
+        card.addEventListener("focusout", (e) => {
+            if (!card.contains(e.relatedTarget)) {
+                closeCard();
+            }
+        });
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+        });
+    });
+
+    // Close everything when mouse leaves slider
+    slider.addEventListener("pointerleave", () => {
+        clearTimeout(closeTimer);
+
+        closeTimer = setTimeout(() => {
+            closeAll();
+        }, 80);
+    });
+
+})();
     </script>
 </body>
 
