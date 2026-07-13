@@ -3315,6 +3315,13 @@ img#curve-svg {
   filter: brightness(0) invert(1);
 }
 
+.team_sldr_cnct:has(.accordion-collapse.show) .team_sldr_img .lnkdn_icn:hover{
+  background-color: var(--white);
+}
+.team_sldr_cnct:has(.accordion-collapse.show) .team_sldr_img .lnkdn_icn:hover img{
+  filter: none;
+}
+
 .accor_btn {
   width: 100%;
   padding: 0;
