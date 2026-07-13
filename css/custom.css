@@ -3391,6 +3391,12 @@ img#curve-svg {
   color: var(--black);
   margin-top: 12px;
   font-weight: 500;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .accor_btn[aria-expanded="true"] p.bio_hdng{
