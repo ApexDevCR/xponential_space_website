@@ -1041,17 +1041,13 @@
     <script>
         /* ═══════════════ TEAM BIO ACCORDION — OPEN ON HOVER ═══════════════ */
         (function initTeamAccordionHover() {
+
     if (typeof bootstrap === "undefined") return;
 
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-    // Mobile/Touch -> Bootstrap default click
+    // Mobile / Touch -> Bootstrap default click
     if (!canHover) return;
-
-    // Destroy previous bindings if this function runs again
-    document.querySelectorAll(".team_sldr_cnct").forEach(card => {
-        card.replaceWith(card.cloneNode(true));
-    });
 
     const cards = document.querySelectorAll(".team_sldr_cnct");
 
@@ -1076,21 +1072,50 @@
             toggle: false
         });
 
-        const openCurrent = () => {
+        // Keep aria-expanded synced
+        panel.addEventListener("shown.bs.collapse", () => {
+            btn.setAttribute("aria-expanded", "true");
+            btn.classList.remove("collapsed");
+        });
 
-            // Close all opened accordions
-            document.querySelectorAll(".accordion-collapse.show").forEach(el => {
+        panel.addEventListener("hidden.bs.collapse", () => {
+            btn.setAttribute("aria-expanded", "false");
+            btn.classList.add("collapsed");
+        });
+
+        function openCurrent() {
+
+            // Close all other accordions
+            document.querySelectorAll(".accordion-collapse.show").forEach((el) => {
+
                 if (el !== panel) {
+
                     bootstrap.Collapse.getOrCreateInstance(el).hide();
+
+                    const otherBtn = document.querySelector(
+                        '.accor_btn[data-bs-target="#' + el.id + '"]'
+                    );
+
+                    if (otherBtn) {
+                        otherBtn.setAttribute("aria-expanded", "false");
+                        otherBtn.classList.add("collapsed");
+                    }
                 }
             });
 
             collapse.show();
-        };
 
-        const closeCurrent = () => {
+            btn.setAttribute("aria-expanded", "true");
+            btn.classList.remove("collapsed");
+        }
+
+        function closeCurrent() {
+
             collapse.hide();
-        };
+
+            btn.setAttribute("aria-expanded", "false");
+            btn.classList.add("collapsed");
+        }
 
         card.addEventListener("mouseenter", openCurrent);
         card.addEventListener("mouseleave", closeCurrent);
@@ -1103,10 +1128,11 @@
             }
         });
 
-        // Prevent click on desktop
+        // Disable click on desktop
         btn.addEventListener("click", function (e) {
             e.preventDefault();
         });
+
     });
 
 })();
