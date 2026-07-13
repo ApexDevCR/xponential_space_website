@@ -3390,6 +3390,11 @@ img#curve-svg {
   font-size: 14px;
   color: var(--black);
   margin-top: 12px;
+  font-weight: 500;
+}
+
+.accor_btn[aria-expanded="true"] p.bio_hdng{
+  display: none;
 }
 
 
