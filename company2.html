@@ -1041,53 +1041,75 @@
     <script>
         /* ═══════════════ TEAM BIO ACCORDION — OPEN ON HOVER ═══════════════ */
         (function initTeamAccordionHover() {
-            const cards = document.querySelectorAll(".team_sldr_cnct");
-            if (!cards.length || typeof bootstrap === "undefined") return;
+    if (typeof bootstrap === "undefined") return;
 
-            const canHover = window.matchMedia(
-                "(hover: hover) and (pointer: fine)"
-            ).matches;
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-            cards.forEach((card) => {
-                const btn = card.querySelector(".accor_btn");
-                const targetSel = btn && btn.getAttribute("data-bs-target");
-                const panel = targetSel ? card.querySelector(targetSel) : null;
-                if (!btn || !panel) return;
+    // Mobile/Touch -> Bootstrap default click
+    if (!canHover) return;
 
-                const bioCollapse = bootstrap.Collapse.getOrCreateInstance(panel, {
-                    toggle: false,
-                });
+    // Destroy previous bindings if this function runs again
+    document.querySelectorAll(".team_sldr_cnct").forEach(card => {
+        card.replaceWith(card.cloneNode(true));
+    });
 
-                if (!canHover) return;
+    const cards = document.querySelectorAll(".team_sldr_cnct");
 
-                let isHovered = false;
-                let isFocused = false;
+    cards.forEach((card) => {
 
-                const sync = () => {
-                    if (isHovered || isFocused) {
-                        bioCollapse.show();
-                    } else {
-                        bioCollapse.hide();
-                    }
-                };
+        // Ignore Slick cloned slides
+        if (card.closest(".slick-cloned")) return;
 
-                card.addEventListener("mouseenter", () => { isHovered = true; sync(); });
-                card.addEventListener("mouseleave", () => { isHovered = false; sync(); });
+        const btn = card.querySelector(".accor_btn");
+        if (!btn) return;
 
-                card.addEventListener("focusin", () => { isFocused = true; sync(); });
-                card.addEventListener("focusout", (e) => {
-                    if (!card.contains(e.relatedTarget)) {
-                        isFocused = false;
-                        sync();
-                    }
-                });
+        const target = btn.getAttribute("data-bs-target");
+        if (!target) return;
 
-                btn.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                });
+        const panel = document.querySelector(target);
+        if (!panel) return;
+
+        // Disable Bootstrap click toggle on desktop
+        btn.removeAttribute("data-bs-toggle");
+
+        const collapse = bootstrap.Collapse.getOrCreateInstance(panel, {
+            toggle: false
+        });
+
+        const openCurrent = () => {
+
+            // Close all opened accordions
+            document.querySelectorAll(".accordion-collapse.show").forEach(el => {
+                if (el !== panel) {
+                    bootstrap.Collapse.getOrCreateInstance(el).hide();
+                }
             });
-        })();
+
+            collapse.show();
+        };
+
+        const closeCurrent = () => {
+            collapse.hide();
+        };
+
+        card.addEventListener("mouseenter", openCurrent);
+        card.addEventListener("mouseleave", closeCurrent);
+
+        card.addEventListener("focusin", openCurrent);
+
+        card.addEventListener("focusout", function (e) {
+            if (!card.contains(e.relatedTarget)) {
+                closeCurrent();
+            }
+        });
+
+        // Prevent click on desktop
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+        });
+    });
+
+})();
     </script>
 </body>
 
