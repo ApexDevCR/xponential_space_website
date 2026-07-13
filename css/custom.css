@@ -3386,6 +3386,12 @@ img#curve-svg {
   text-overflow: ellipsis;
 }
 
+.accor_btn p.bio_hdng{
+  font-size: 14px;
+  color: var(--black);
+  margin-top: 12px;
+}
+
 
 
 /* eleveight_page */
