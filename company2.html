@@ -1122,100 +1122,52 @@
     <script>
         /* ═══════════════ TEAM BIO ACCORDION — OPEN ON HOVER ═══════════════ */
         (function initTeamAccordionHover() {
-
-            if (typeof bootstrap === "undefined") return;
-
-            const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-            // Mobile / Touch -> Bootstrap default click
-            if (!canHover) return;
-
             const cards = document.querySelectorAll(".team_sldr_cnct");
+            if (!cards.length || typeof bootstrap === "undefined") return;
+
+            const canHover = window.matchMedia(
+                "(hover: hover) and (pointer: fine)"
+            ).matches;
 
             cards.forEach((card) => {
-
-                // Ignore Slick cloned slides
-                if (card.closest(".slick-cloned")) return;
-
                 const btn = card.querySelector(".accor_btn");
-                if (!btn) return;
+                const targetSel = btn && btn.getAttribute("data-bs-target");
+                const panel = targetSel ? card.querySelector(targetSel) : null;
+                if (!btn || !panel) return;
 
-                const target = btn.getAttribute("data-bs-target");
-                if (!target) return;
-
-                const panel = document.querySelector(target);
-                if (!panel) return;
-
-                // Disable Bootstrap click toggle on desktop
-                btn.removeAttribute("data-bs-toggle");
-
-                const collapse = bootstrap.Collapse.getOrCreateInstance(panel, {
-                    toggle: false
+                const bioCollapse = bootstrap.Collapse.getOrCreateInstance(panel, {
+                    toggle: false,
                 });
 
-                // Keep aria-expanded synced
-                panel.addEventListener("shown.bs.collapse", () => {
-                    btn.setAttribute("aria-expanded", "true");
-                    btn.classList.remove("collapsed");
-                });
+                if (!canHover) return;
 
-                panel.addEventListener("hidden.bs.collapse", () => {
-                    btn.setAttribute("aria-expanded", "false");
-                    btn.classList.add("collapsed");
-                });
+                let isHovered = false;
+                let isFocused = false;
 
-                function openCurrent() {
+                const sync = () => {
+                    if (isHovered || isFocused) {
+                        bioCollapse.show();
+                    } else {
+                        bioCollapse.hide();
+                    }
+                };
 
-                    // Close all other accordions
-                    document.querySelectorAll(".accordion-collapse.show").forEach((el) => {
+                card.addEventListener("mouseenter", () => { isHovered = true; sync(); });
+                card.addEventListener("mouseleave", () => { isHovered = false; sync(); });
 
-                        if (el !== panel) {
-
-                            bootstrap.Collapse.getOrCreateInstance(el).hide();
-
-                            const otherBtn = document.querySelector(
-                                '.accor_btn[data-bs-target="#' + el.id + '"]'
-                            );
-
-                            if (otherBtn) {
-                                otherBtn.setAttribute("aria-expanded", "false");
-                                otherBtn.classList.add("collapsed");
-                            }
-                        }
-                    });
-
-                    collapse.show();
-
-                    btn.setAttribute("aria-expanded", "true");
-                    btn.classList.remove("collapsed");
-                }
-
-                function closeCurrent() {
-
-                    collapse.hide();
-
-                    btn.setAttribute("aria-expanded", "false");
-                    btn.classList.add("collapsed");
-                }
-
-                card.addEventListener("mouseenter", openCurrent);
-                card.addEventListener("mouseleave", closeCurrent);
-
-                card.addEventListener("focusin", openCurrent);
-
-                card.addEventListener("focusout", function (e) {
+                card.addEventListener("focusin", () => { isFocused = true; sync(); });
+                card.addEventListener("focusout", (e) => {
                     if (!card.contains(e.relatedTarget)) {
-                        closeCurrent();
+                        isFocused = false;
+                        sync();
                     }
                 });
 
-                // Disable click on desktop
-                btn.addEventListener("click", function (e) {
+                btn.addEventListener("click", (e) => {
                     e.preventDefault();
+                    e.stopPropagation();
                 });
-
             });
-
         })();
     </script>
 </body>
