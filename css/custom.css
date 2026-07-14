@@ -3074,10 +3074,10 @@ img#curve-svg {
 
 .join_sec::before {
   display: block;
-  width: 100%;
+  width: 1340px;
   height: 1px;
   background-color: var(--black);
-  max-width: 1340px;
+  max-width: calc(100% - 24px);
   margin-inline: auto;
   content: "";
   margin-bottom: 120px;
