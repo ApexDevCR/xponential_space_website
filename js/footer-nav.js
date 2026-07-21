@@ -88,29 +88,25 @@
     return document.querySelector("." + section);
   }
 
-  // Smoothly scrolls to the section, then activates the tab once the
-  // scroll has settled so the correct tab is visibly active in view.
+  // Activates the tab right away, then smoothly scrolls to the section —
+  // so the correct tab is already switched before the user arrives there.
   function goToSectionAndTab(section, tab) {
     const target = getScrollTarget(section);
     if (!target) return;
 
-    const finish = () => activateTab(section, tab);
+    activateTab(section, tab);
 
     if (window.lenis && typeof window.lenis.scrollTo === "function") {
       window.lenis.scrollTo(target, {
         offset: -getHeaderOffset(),
         duration: 1.2,
-        onComplete: finish,
       });
-      // Safety net in case onComplete doesn't fire for any reason
-      setTimeout(finish, 1400);
     } else {
       const top =
         target.getBoundingClientRect().top +
         window.pageYOffset -
         getHeaderOffset();
       window.scrollTo({ top, behavior: "smooth" });
-      setTimeout(finish, 700);
     }
   }
 
