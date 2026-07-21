@@ -225,6 +225,7 @@ h3 {
   background-color: var(--black);
   display: flex;
   flex-direction: column;
+  scroll-margin-top: -80px;
 }
 
 /* .frm_orbt_sec::before {

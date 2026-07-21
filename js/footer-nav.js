@@ -73,10 +73,25 @@
     }
   }
 
+  // Some sections scroll to a more precise element than the section root
+  // itself (e.g. straight to the tab block rather than the top of the section).
+  const SCROLL_TARGET_OVERRIDE = {
+    elveigh_sec: ".sol_tb_mn",
+  };
+
+  function getScrollTarget(section) {
+    const overrideSelector = SCROLL_TARGET_OVERRIDE[section];
+    if (overrideSelector) {
+      const el = document.querySelector(overrideSelector);
+      if (el) return el;
+    }
+    return document.querySelector("." + section);
+  }
+
   // Smoothly scrolls to the section, then activates the tab once the
   // scroll has settled so the correct tab is visibly active in view.
   function goToSectionAndTab(section, tab) {
-    const target = document.querySelector("." + section);
+    const target = getScrollTarget(section);
     if (!target) return;
 
     const finish = () => activateTab(section, tab);
@@ -107,13 +122,9 @@
 
     if (isHomePage()) {
       // Already on Home: no reload, just scroll + switch tab in place.
+      // URL is intentionally left unchanged.
       e.preventDefault();
       goToSectionAndTab(section, tab);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set("section", section);
-      url.searchParams.set("tab", tab);
-      window.history.replaceState(null, "", url);
     }
     // On any other page: let the default navigation happen — the link
     // already points to index.html?section=...&tab=..., which is picked
@@ -138,7 +149,14 @@
     // Wait for the page (fonts/images/GSAP setup + orbit chips) to fully
     // settle before scrolling, so the offset/position is accurate.
     window.addEventListener("load", () => {
-      setTimeout(() => goToSectionAndTab(section, tab), 350);
+      setTimeout(() => {
+        goToSectionAndTab(section, tab);
+        // Strip the params back out once handled so the URL returns to normal.
+        const url = new URL(window.location.href);
+        url.searchParams.delete("section");
+        url.searchParams.delete("tab");
+        window.history.replaceState(null, "", url);
+      }, 350);
     });
   }
 
