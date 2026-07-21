@@ -17,10 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     smoothWheel: true,
     wheelMultiplier: 1.05,
   });
+
+  // Expose globally so other scripts (e.g. footer navigation) can reuse
+  // the same smooth-scroll instance instead of fighting it with native scrolling.
   window._lenis = lenis;
 
   lenis.on("scroll", ScrollTrigger.update);
-
+  
   document.querySelectorAll(".accor_body").forEach((el) => {
     el.setAttribute("data-lenis-prevent", "");
   });
@@ -89,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   });
 
-  document.querySelectorAll('[data-bs-toggle="tab"]').forEach(function (tab) {
-    tab.addEventListener('shown.bs.tab', function () {
-      $('.slick-slider').slick('setPosition');
-    });
+  document.querySelectorAll('[data-bs-toggle="tab"]').forEach(function(tab) {
+    tab.addEventListener('shown.bs.tab', function() {
+        $('.slick-slider').slick('setPosition');
+      });
   });
 
   const newsSlickConfig = {
@@ -108,29 +111,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
-  function updateSliderUI($slider) {
-    const $pane = $slider.closest(".tab-pane, .slider-container-wrap");
-    const $fill = $pane.find(".slider-progress-fill");
-    const $prev = $pane.find(".prev-btn");
-    const $next = $pane.find(".next-btn");
+function updateSliderUI($slider) {
+  const $pane = $slider.closest(".tab-pane, .slider-container-wrap");
+  const $fill = $pane.find(".slider-progress-fill");
+  const $prev = $pane.find(".prev-btn");
+  const $next = $pane.find(".next-btn");
 
-    const slickObj = $slider.slick("getSlick");
-    const current = $slider.slick("slickCurrentSlide");
-    const slidesToShow = $slider.slick("slickGetOption", "slidesToShow");
+  const slickObj = $slider.slick("getSlick");
+  const current = $slider.slick("slickCurrentSlide");
+  const slidesToShow = $slider.slick("slickGetOption", "slidesToShow");
 
-    const maxSlide = slickObj.slideCount - slidesToShow;
+  const maxSlide = slickObj.slideCount - slidesToShow;
 
-    let pct = 0;
+  let pct = 0;
 
-    if (slickObj.slideCount > slidesToShow) {
-      pct = ((current + 1) / (maxSlide + 1)) * 100;
-    }
-
-    $fill.css("width", Math.min(pct, 100) + "%");
-
-    $prev.toggleClass("disabled", current <= 0);
-    $next.toggleClass("disabled", current >= maxSlide);
+  if (slickObj.slideCount > slidesToShow) {
+    pct = ((current + 1) / (maxSlide + 1)) * 100;
   }
+
+  $fill.css("width", Math.min(pct, 100) + "%");
+
+  $prev.toggleClass("disabled", current <= 0);
+  $next.toggleClass("disabled", current >= maxSlide);
+}
 
   $(".news-slider").each(function () {
     const $s = $(this);
@@ -1028,6 +1031,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // if (xpoTopSec) {
 //   const heading = xpoTopSec.querySelector('h2');
 //   const text = heading.textContent.trim();
+//   // Split into words
 //   heading.innerHTML = text
 //     .split(' ')
 //     .map(word => `<span class="word">${word}</span>`)
