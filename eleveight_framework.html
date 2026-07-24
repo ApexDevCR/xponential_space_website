@@ -28,45 +28,117 @@
     <nav class="navbar">
       <div class="container">
         <a class="hdr_logo" href="./index.html">
-          <img src="./images/header-logo.png" alt="Logo" class="logo" />
+          <img src="./images/header-logo.png" alt="Logo" class="logo" fetchpriority="high" />
         </a>
 
         <div class="nav_wrapper" id="navWrapper">
           <ul class="navbar_nav">
-            <li class="nav_item">
-              <a class="nav_link active" href="">Company</a>
-            </li>
-            <li class="nav_item">
-              <a class="nav_link" href="">Industries</a>
-            </li>
-            <li class="nav_item">
-              <a class="nav_link" href="">Capabilities</a>
-            </li>
             <li class="nav_item has-sub-mnu">
-              <a class="nav_link" href="">Solutions</a>
+              <a class="nav_link active" href="./company.html">Company</a>
               <ul class="sub-mnu">
                 <li class="sub-mnu-itm">
-                  <a class="nav_link" href="">Sub Menu 1</a>
+                  <a class="nav_link" href="./company.html?section=what_we_sec" data-section="what_we_sec">Mission</a>
                 </li>
                 <li class="sub-mnu-itm">
-                  <a class="nav_link" href="">Sub Menu 2</a>
+                  <a class="nav_link" href="./company.html?section=our_vision_sec"
+                    data-section="our_vision_sec">Vision</a>
                 </li>
                 <li class="sub-mnu-itm">
-                  <a class="nav_link" href="">Sub Menu 3</a>
+                  <a class="nav_link" href="./index.html?section=prtnr_sec" data-section="prtnr_sec">Clients &
+                    Partners</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./company.html?section=team_sec" data-section="team_sec">Team</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./company.html?section=join_sec" data-section="join_sec">Careers</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item has-sub-mnu">
+              <a class="nav_link" href="./index.html?section=frm_orbt_sec" data-section="frm_orbt_sec">Industries</a>
+              <ul class="sub-mnu">
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=frm_orbt_sec&tab=lifesciences"
+                    data-section="frm_orbt_sec" data-tab="lifesciences">Life Sciences & Pharma</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=frm_orbt_sec&tab=advancedmaterials"
+                    data-section="frm_orbt_sec" data-tab="advancedmaterials">Advanced Materials</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item has-sub-mnu">
+              <a class="nav_link" href="./index.html?section=capablty_sec" data-section="capablty_sec">Capabilities</a>
+              <ul class="sub-mnu">
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=capablty_sec&idx=0" data-section="capablty_sec"
+                    data-idx="0">Activation</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=capablty_sec&idx=1" data-section="capablty_sec"
+                    data-idx="1">Insights</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=capablty_sec&idx=2" data-section="capablty_sec"
+                    data-idx="2">Strategy</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=capablty_sec&idx=3" data-section="capablty_sec"
+                    data-idx="3">Execution</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=elveigh_sec_cnct"
+                    data-section="elveigh_sec_cnct">eleveight<sup>&trade;</sup> framework</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item has-sub-mnu">
+              <a class="nav_link" href="./index.html?section=elveigh_sec" data-section="elveigh_sec">Solutions</a>
+              <ul class="sub-mnu">
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=elveigh_sec&tab=earth" data-section="elveigh_sec"
+                    data-tab="earth">For Earth Organizations</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=elveigh_sec&tab=space" data-section="elveigh_sec"
+                    data-tab="space">For Space Organizations</a>
                 </li>
               </ul>
             </li>
             <li class="nav_item">
               <a class="nav_link" href="">Our Work</a>
             </li>
-            <li class="nav_item">
-              <a class="nav_link" href="">Newsroom</a>
+            <li class="nav_item has-sub-mnu">
+              <a class="nav_link" href="./index.html?section=newsroom_Sec" data-section="newsroom_Sec">Newsroom</a>
+              <ul class="sub-mnu">
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=newsroom_Sec&tab=articles" data-section="newsroom_Sec"
+                    data-tab="articles">Articles</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=newsroom_Sec&tab=insights" data-section="newsroom_Sec"
+                    data-tab="insights">Insights</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=newsroom_Sec&tab=events" data-section="newsroom_Sec"
+                    data-tab="events">Events</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=newsroom_Sec&tab=news" data-section="newsroom_Sec"
+                    data-tab="news">News</a>
+                </li>
+                <li class="sub-mnu-itm">
+                  <a class="nav_link" href="./index.html?section=newsroom_Sec&tab=press" data-section="newsroom_Sec"
+                    data-tab="press">Press Releases</a>
+                </li>
+              </ul>
             </li>
           </ul>
           <div class="hdr-btn">
             <a href="" class="primary_btn">Talk to us</a>
           </div>
-          <!-- <span class="d-lg-none close_header"><img src="./images/crossIcon.png" alt="" /></span> -->
+          <!-- <span class="d-lg-none close_header"><img src="./images/crossIcon.png" alt=""  loading="lazy" /></span> -->
         </div>
       </div>
     </nav>
