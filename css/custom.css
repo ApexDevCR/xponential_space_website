@@ -1378,6 +1378,10 @@ h3 {
   transition: var(--transition);
 }
 
+.hdr_sec.scrolled .container .sub-mnu{
+  background: rgba(0, 0, 0, 1);
+}
+
 .nav_wrapper ul.navbar_nav li.nav_item.has-sub-mnu:hover .sub-mnu {
   opacity: 1;
   visibility: visible;
