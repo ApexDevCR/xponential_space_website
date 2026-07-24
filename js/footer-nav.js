@@ -60,7 +60,7 @@
 
   function getHeaderOffset() {
     const header = document.querySelector(".hdr_sec");
-    return header ? header.offsetHeight + 16 : 0;
+    return 0;
   }
 
   // Activates the Bootstrap tab inside elveigh_sec
